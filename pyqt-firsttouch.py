@@ -1,16 +1,21 @@
+"""
+Burak Ekinci - python
+"""
+
 import sys                                  #konsol argümanları için
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication, QMainWindow, QToolTip
 from PyQt5.QtGui import QIcon
 
 class MyWindow(QMainWindow):
-    def __init__(self):                     #pencere ve UI tanımlaması
+    def __init__(self):                     #pencere boyutu,başlığı ve UI tanımlaması
         super(MyWindow,self).__init__()      
         self.setWindowTitle('test')
         self.setGeometry(200,200,500,500)
         self.initUI()
 
     def initUI(self):                       #labellar, butonlar vs burada olur
+        #labellar
         self.lbl_name = QtWidgets.QLabel(self)
         self.lbl_name.setText('Adınız : ')
         self.lbl_name.move(50,30)
@@ -23,12 +28,14 @@ class MyWindow(QMainWindow):
         self.lbl_result.resize(300,50)
         self.lbl_result.move(150,150)
 
+        #text alanları
         self.txt_name = QtWidgets.QLineEdit(self)
         self.txt_name.move(150,30)
 
         self.txt_surname = QtWidgets.QLineEdit(self)
         self.txt_surname.move(150,70)
 
+        #butonlar
         self.btn_save = QtWidgets.QPushButton(self)
         self.btn_save.setText('Kaydet')
         self.btn_save.move(150,110)
